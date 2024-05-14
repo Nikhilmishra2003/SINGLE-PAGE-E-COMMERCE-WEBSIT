@@ -1,0 +1,452 @@
+/* body{
+    background-image: url("img3.jpg");
+    background-size: cover;
+    background-position: center;
+    
+} */
+/* 2. */
+.nav{
+    background-color: white;
+    z-index: 9;
+    /* nav bar top par hi rahega, 9 is top, -1 is down(bottom),1 is one posn above bottom.... */
+    /* padding: 10px; */
+    /* play with this padding, give changes to this and margin-top in .nav_side */
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;/* same line but in horizontal way, atems aligned side to side */
+    /* givin shadows to the box*/
+    box-shadow: 0px 3px 65px 0px rgba(0, 0, 0, 0.15);
+}
+/* 3. keep navbar at top*/
+.nav_top{
+    /* to make sure the navbar stays at the top */
+    position: fixed;
+    top: 0;/* touch top side border, sat jaega  */
+    right: 0;/* touch right side border */
+    left: 0;/* touch left side border */
+}
+/* 4. logo  */
+.logo{
+    /* background-color: aqua; */
+    /* use this to see where the logo is  */
+    width: 60%;
+    float: left;
+    /* logo left me laga rahega */
+}
+.logo img{
+    padding: 10px;
+}
+/* 5. nav side, pura rght me chahiye(links and all */
+.nav_side{
+    /* background-color: blueviolet; *//* use this to see where the links are  */
+    float: right;/* make the stuff go to the right side, flex ke karan nahi lag raha hai ki right me hai(maybe) */
+    width: 40%;/* 60% is to the logo, the remaining is here */
+    margin-top: 40px;
+
+}
+.nav_side a{
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+    font-weight: bold;
+    font-family: cosmic,sans-serif;
+    font-size: 17px;
+
+    /* all the 3 centre things same place, damn */
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+/* 6. link pe hover karne par changes */
+.nav_side a:hover{
+    color: rgb(45, 182, 136);
+    font-size: 20px;
+    /* text-decoration: underline; */
+    transition: all 100ms ease-in-out;
+}
+
+/* 8.parallax img and stuff */
+.main{
+    /* common stuff for a background image */
+    background-image: url('img3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* for parallax image, parallax matlab image fix rahegi, baaki ka text iske upar scroll karega */
+    background-attachment:fixed ;
+    height: 80vh;/* ye nahi diya toh img navbar ke peeche chali gayi,after this some part of the img in the back some is in front */
+}
+/* 10 */
+.main .main_content{
+    padding-top: 15%;
+    /* at least ye 100 hona padega, bcoz ye img ke upar likh raha, some part of img in behind the navbar, so 100 se kam me chhup raha h content, can give in px or % */
+    margin-left: 10%;
+    margin-right: 10%;
+    /* isme colour valaor laga kar dekh lena kaisa behave karta */
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.main .main_content h2{
+    color: black;
+    font-size: 50px;
+    font-family: cosmic,sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 25px;
+
+    /* ye isliye diya so that the link looks just a bit below the h2 tag thing and bot completely below the h2 tag, comment karke dekh lena kya hota */
+    margin-bottom: 10px;
+
+}
+/* 12., yaha .main_content aur span ke beech me h2 aana tha but then ye neeche waali prop nahi dikh rahi, nvm it works(problem thi ki span tag h2 kae andar hona tha)  */
+/* main ke andar main_content ke andar h2 ke andar span ki prop */
+.main .main_content h2 span{
+    font-size: 15px;
+    opacity: 0.7;
+    color: rgb(5, 66, 68);
+    font-weight:400;
+    /* ye same cheez h2 waale me bhi hai, but yaha likhna pada bcoz upar se h2 hataya tha(reason like 2,4 lines above this) */
+    line-height: 10px;
+    /* ye phir bhi aaega wether span is in the h2 or not */
+}
+/* 13 */
+.main .main_content .btn{
+    margin-top: 10px;
+}
+.main .main_content .btn a{
+    text-decoration: none;
+    margin: 50px;
+    padding: 10px 20px;
+    background-color: rgb(5, 66, 68);/* helps to see the padding change */
+    color: white;
+    font-family: cosmic,sans-serif;
+    text-align: center;
+    border: 2px solid lightblue;
+    border-radius: 10px;/* give the radius 50% adn see the magic */
+    transition: 0.5s;
+}
+/* 14, btn par hover  */
+.main .main_content .btn a:hover{
+    background-color: black;
+    color: orange;
+    border: none;
+    border-bottom: 4px solid orange;
+    transition: 0.5s;
+}
+
+/* for the profucts */
+
+/* 18, fo the space  */
+.product{
+    padding-bottom: 50px;
+    /* abe ye vo space hai jo my product section ke neeche dega, khali space, incerease in the value above we see we can scroll more down now */
+
+}
+/* 16 */
+.product h2{
+    color: black;
+    font-size: 35px;
+    text-align: center;
+    padding: 20px;
+    /* diaplay me flex daalna hoga, so that we cans ee all the things side by side */
+}
+.product .product_container{
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+/* for da items */
+.product .product_container .item{
+    
+    width: 33.33%;
+    /* 33.33 bcoz we need like 3 items in 1 row, other items come below, kehne ke matlab ek element 33.33% jagah gherega, agar aur elements aaye toh width of each element will decrease so that the new element can go in the same row,(gotta fix this somehow) */
+    /* abe elemetns add aur alaga karke dekh le  */
+    margin: 10px;
+    height: 470px;
+}
+/* 20, item par hover karenge toh kya hoga */
+.product .product_container .item:hover{
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+}
+/* img kachra dikh rahi isko set karte */
+.product .product_container .item .item_img{
+    width: 100%;
+    height: 250px;
+    /* accha ye height fix kar di hai div ki, img ko phir same prop denge toh sahi aaegi image dabbe me */
+    overflow: hidden;
+}
+/* 17 */
+.product .product_container .item .item_img img{
+    width: 100%;
+    height: 250px;
+    /* same prop as in the item_img thing, except the overflow thing(that is for when other items inserted) */
+}
+/* 19, now for the img content part */
+.product .product_container .item .item_content{
+    text-align: center;
+}
+/* this thing(item_content) has h3 tag, p tag ,a tag teeno me changes karenge*/
+.product .product_container .item .item_content h3{
+    padding: 10px;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.product .product_container .item .item_content p{
+    padding: 9px;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.product .product_container .item .item_content a{
+    /* isme pehle vaale button valli saari prop copy same */
+    text-decoration: none;
+    margin: 50px;
+    padding: 10px 20px;
+    background-color: rgb(5, 66, 68);/* helps to see the padding change */
+    color: white;
+    font-family: cosmic,sans-serif;
+    text-align: center;
+    border: 2px solid lightblue;
+    border-radius: 10px;/* give the radius 50% adn see the magic */
+    transition: 0.5s;
+}
+.product .product_container .item .item_content a:hover{
+    /* again smae prop. as before */
+    background-color: black;
+    color: orange;
+    border: none;
+    border-bottom: 4px solid orange;
+    transition: 0.5s;
+}
+/* 22, show-more button */
+.product .product_btn{
+    text-align: center;
+    margin-top: 50px;
+}
+.product .product_btn a{
+    text-decoration: none;
+    /* no margin her ebcox maegin pehle hi di hai product_btn me, plus single element(product_btn) me margin laga bhi lega toh kya hi dikhega effect */
+    padding: 10px 20px;
+    background-color: rgb(5, 66, 68);/* helps to see the padding change */
+    color: white;
+    font-family: cosmic,sans-serif;
+    text-align: center;
+    border: 2px solid lightblue;
+    border-radius: 10px;/* give the radius 50% adn see the magic */
+    transition: 0.5s;
+}
+.product .product_btn a:hover{
+    background-color: black;
+    color: orange;
+    border: none;
+    border-bottom: 4px solid orange;
+    transition: 0.5s;
+}
+
+/* 24, highlights things */
+.keypoint{
+    padding: 50px;
+}
+/* isme h2 hai aur content hai aur container hai, sabka likhna h  */
+.keypoint h2{
+    color: black;
+    font-size: 35px;
+    text-align: center;
+    padding: 10px;
+}
+.keypoint .key_container{
+    /* left me points right me image */
+    display: flex;
+}
+.keypoint .key_container .key_content{
+    width: 40%;/* width given to the key-content */
+    padding: 20px;
+    /* float ke liye toh left ya right option hi hai, content yaa toh left me rahega yaa toh right me */
+    float: left;
+}
+/* now for the list item */
+.keypoint .key_container .key_content li{
+    list-style: none;/* to remove the dot as list item thing */
+    margin: 10px;
+    padding: 10px;
+    border-left: 2px solid orange;
+    color: black;
+    text-align: left;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 0px 3px 65px 3px rgba(0, 0, 0, 0.15);
+}
+/* now for the img */
+.keypoint .key_container .key_img{
+    width: 40%;
+    float: right;
+
+    /* maybe useful comments */
+    /* margin-left: 190px;, yehi cheez toh di hai img ko */
+    /* padding: 100px;pading nahi de sakte img neeche jaa rhai */
+}
+.keypoint .key_container .key_img img{
+    /* now we fix the actual image */
+    width: 100%;/* 100% of the total given to the key_img div */
+    margin-left: 100px;
+}
+
+
+/* testimonial */
+/* 30 */
+.testi{
+    padding: 70px;
+}
+.testi h2{
+    color: black;
+    font-size: 35px;
+    text-align: center;
+    padding: 10px;
+    /* make words capital */
+    text-transform: uppercase;
+}
+.testi .testi_container{
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+}
+.testi .testi_container .carousel-inner{
+    background-color: white;
+    box-shadow: none;
+}
+.testi .testi_container .item{
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: none;
+}
+/* ye .product .product_container waale se liye hai */
+.testi .testi_container .item .item_img{
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.testi .testi_container .item .item_img img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+
+    /* if make width 100% instead of 100px then comment out this margin-top */
+    margin-top: 100px;
+}
+.testi .testi_container .item .item_content{
+    text-align: center;
+}
+/* this thing(item_content) has h3 tag, p tag ,a tag teeno me changes karenge*/
+.testi .testi_container .item .item_content h3{
+    padding: 10px;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.testi .testi_container .item .item_content p{
+    padding: 9px;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* 31. footer */
+footer{
+    background-color: grey;
+    padding: 50px;
+}
+footer .pages{
+    text-align: center;
+}
+footer .pages h3{
+    color: orange;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+
+}
+footer .pages a{
+    text-decoration: none;
+    margin:10px;
+    color: orange;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+footer .pages a:hover{
+    color: white ;
+    font-size: 20px;
+    transition: 0.3s ease-out;
+}
+
+footer .doc{
+    text-align: center;
+}
+footer .doc h3{
+    color: orange;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+}
+footer .doc a{
+    text-decoration: none;
+    margin:10px;
+    color: orange;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+footer .doc a:hover{
+    color: white ;
+    font-size: 20px;
+    transition: 0.3s ease-out;
+}
+
+footer .social{
+    text-align: center;
+}
+footer .social h3{
+    color: orange;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+}
+/* 36 */
+footer .social a{
+    text-decoration: none;
+    font-size: 30px;
+    color: orange;
+    margin: 10px;
+}
+footer .social a:hover{
+    color: white;
+    transition: 0.3s ease-in;
+}
+
+footer .contact{
+    text-align: center;
+}
+footer .contact h3{
+    color: orange;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+}
+
+/* 35 */
+footer .contact a{
+    text-decoration: none;
+    font-size: 30px;
+    color: orange;
+    margin: 10px;
+}
+footer .contact a:hover{
+    color: white;
+    transition: 0.3s ease-in;
+}
+footer p{
+    text-align: center;
+}
